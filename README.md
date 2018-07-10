@@ -11,10 +11,10 @@ make
 ```
 
 This will package the app and start the Tomcat server, as well as tail the logs of the server (so we can figure out when it's fully started).
-`Ctrl+C` will quit tailing the logs (but keep the server running in daemon mode).
+`Ctrl+c` will quit tailing the logs (but keep the server running in daemon mode).
 
-Test the application by accessing `http://<your-ip>/blog/articles`, replace `<your-ip>` with
-`localhost`/`127.0.0.1`, or your `docker-machine ip <docker-machine-name>`, depending on your system and setup.
+Test the application by accessing `http://<your-ip>/blog/articles` (replace `<your-ip>` with
+`localhost`/`127.0.0.1`, or your `docker-machine ip <docker-machine-name>`, depending on your system and setup).
 
 ## Repackaging the application
 
