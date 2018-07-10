@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  tomcat:
+    build:
+      context: ./docker/tomcat
+    volumes:
+      - ./target/tomcat-restlet-blog-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/ROOT.war
+      - ./target/tomcat-restlet-blog-1.0-SNAPSHOT:/usr/local/tomcat/webapps/ROOT
+    ports:
+      - "80:8080"
+
+  maven:
+    build:
+      context: ./docker/maven
+    volumes:
+      - ./:/usr/src/tomcat-restlet-blog
+    working_dir: /usr/src/tomcat-restlet-blog
+    entrypoint: ./docker/maven/scripts/entrypoint.sh
